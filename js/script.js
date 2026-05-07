@@ -1,87 +1,18 @@
-// switch
-// Use switch quando comparar uma variável contra múltiplos valores fixos. Mais legível que muitos else if encadeados.
-const diaSemana = "segunda";
 
-switch (diaSemana) {
-  case "segunda":
-    console.log("Dia útil e trabalho");
-    break;
-  case "terça":
-    console.log("Dia útil e dia de aula");
-    break;
-  case "quarta":
-    console.log("Dia útil e dia de feira");
-    break;
-  case "quinta":
-    console.log("Dia útil e dia de festa");
-    break;
-  case "sexta":
-    console.log("Feriado!!!");
-    break;
-  case "sábado":
-    console.log("Fim de semana!");
-    break;
-  case "domingo":
-    console.log("Fim de semana!");
-    break;
-  default:
-    console.log("Dia inválido");
-}
 
-// Nunca esqueça o break! Sem ele o JS continua executando os cases seguintes (fall-through).
-// EXERCÍCIO — Módulo 2
-// •	Crie um verificador de faixa etária: "criança" (< 12), "adolescente" (12–17), "adulto" (18–59), "idoso" (60+).
-// •	Simule um semáforo com switch: verde, amarelo, vermelho → imprima a instrução correspondente.
-// •	Crie um mini-calculadora: peça dois números e uma operação (+, -, *, /) e exiba o resultado.
+//Recuperando botão entrar
+const botaoEntrar = document.getElementById("btnEntrar");
 
-let idade = 25;
+//Atrelar ao botão um evento
+//Vamos utilizar uma função que escuta eventos
+//Essa funçao se chama addEventListener(param1, param2) e recebe dois parâmetros:
+//O primeiro é o evento em si (click ou outro qualquer).
+//O segundo é a função que será executada quando esse evento acontecer.
 
-if(idade< 12){
-  console.log("Criança")
-}else if(idade>= 12 && idade <18){
-  console.log("Adolescente");
-}else if(idade >= 18 && idade <=59){
-  console.log("Adulto");
-}else{
-  console.log("Idoso");
-}
+//Ex: botaoEntrar.addEventListener("click", function(){ Coisas aqui dentro da função para serem executadas quando o botão for clicado. });
 
-let semaforo = "vermelho"
+botaoEntrar.addEventListener("click", function(){
+  console.log("O botão foi clicado")
+})
 
-switch(semaforo){
-  case "verde":
-    console.log("Siga");
-    break;
-  
-    case "amarelo":
-    console.log("Atenção");
-    break;
-
-  case "vermelho":
-    console.log("Pare");
-    break;
-
-  default:
-    console.log("Semáforo com defeito")
-}
-
-let nr1 = 10;
-let nr2 = 20;
-let operação = "+";
-
-switch (operação){
-  case "+":
-    console.log(nr1 + nr2);
-    break;
-  case "-":
-    console.log(nr1 - nr2);
-    break
-  case "*":
-    console.log(nr1 * nr2);
-    break;
-  case "/":
-    console.log(nr1 / nr2);
-    break
-  default:
-    console.log("Operação inválida")
-}
+botaoEntrar();
